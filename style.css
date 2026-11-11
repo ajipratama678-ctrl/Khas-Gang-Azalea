@@ -1,0 +1,395 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  background-attachment: fixed;
+  color: #182230;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 38px 24px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  font-weight: 800;
+  color: #667085;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 6px 0 4px;
+  letter-spacing: -.8px;
+  word-break: break-word;
+}
+
+.topbar p, 
+.panel-heading p {
+  color: #667085;
+  margin: 0;
+  font-size: 14px;
+}
+
+.date-pill {
+  background: white;
+  border: 1px solid #e4e7ec;
+  border-radius: 30px;
+  padding: 8px 14px;
+  color: #475467;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* CARDS STATISTIK */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat, 
+.panel {
+  background: #fff;
+  border: 1px solid #eaecf0;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px #10182808;
+}
+
+.stat {
+  padding: 20px;
+}
+
+.stat span {
+  display: block;
+  color: #667085;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat strong {
+  display: block;
+  font-size: 22px;
+  margin: 10px 0 4px;
+  letter-spacing: -.5px;
+  word-break: break-word;
+}
+
+.stat small {
+  color: #98a2b3;
+  font-size: 12px;
+}
+
+.balance {
+  background: #172b4d;
+  color: #fff;
+  border-color: #172b4d;
+}
+
+.balance span, 
+.balance small {
+  color: #c5d0e0;
+}
+
+.blue {
+  color: #3159a5 !important;
+}
+
+.green {
+  color: #159568 !important;
+}
+
+.red {
+  color: #d04444 !important;
+}
+
+/* LAYOUT UTAMA */
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.panel-heading {
+  margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+  font-size: 17px;
+  margin: 0 0 4px;
+}
+
+/* FORM INPUT */
+.transaction-form {
+  display: grid;
+  gap: 14px;
+}
+
+.transaction-form label {
+  display: grid;
+  gap: 6px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.transaction-form input, 
+.transaction-form select, 
+.filter input {
+  width: 100%;
+  height: 44px; /* Touch target optimal di HP */
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+  padding: 0 12px;
+  background: #fff;
+  color: #182230;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.transaction-form input:focus, 
+.transaction-form select:focus, 
+.filter input:focus {
+  border-color: #5476c8;
+  box-shadow: 0 0 0 3px #5476c81c;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  background: #3159a5;
+  color: #fff;
+  padding: 12px 15px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+button:hover {
+  filter: brightness(.95);
+}
+
+.transaction-form button {
+  margin-top: 4px;
+}
+
+/* RIWAYAT TRANSAKSI & TABEL */
+.history-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.filter {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.filter input {
+  width: 155px;
+}
+
+.secondary {
+  background: #edf2fb;
+  color: #3159a5;
+  padding: 10px 14px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -4px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+  text-align: left;
+}
+
+th {
+  color: #667085;
+  font-weight: 650;
+  background: #f9fafb;
+}
+
+th, 
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eaecf0;
+  white-space: nowrap;
+}
+
+td.description {
+  white-space: normal;
+  min-width: 130px;
+  color: #344054;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tag.masuk {
+  background: #e8f7f0;
+  color: #12805c;
+}
+
+.tag.keluar {
+  background: #fff0ed;
+  color: #c43e35;
+}
+
+.amount {
+  font-weight: 700;
+}
+
+.delete {
+  background: transparent;
+  color: #c43e35;
+  padding: 6px 7px;
+  font-size: 11px;
+  min-height: auto;
+}
+
+.empty {
+  text-align: center;
+  color: #98a2b3;
+  padding: 32px;
+}
+
+.notice {
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.success {
+  background: #e8f7f0;
+  color: #12805c;
+}
+
+.error {
+  background: #fff0ed;
+  color: #c43e35;
+}
+
+footer {
+  text-align: center;
+  color: #98a2b3;
+  font-size: 12px;
+  padding: 28px 0 10px;
+}
+
+/* ========================================================= */
+/* MEDIA QUERIES KHUSUS HP & TABLET (RESPONSIVE IMPROVEMENTS) */
+/* ========================================================= */
+
+@media (max-width: 950px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 16px 12px;
+  }
+  
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 22px;
+  }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .cards {
+    grid-template-columns: 1fr; /* Full 1 kolom di HP agar angka nominal besar terlihat jelas */
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 16px;
+  }
+
+  .stat strong {
+    font-size: 20px;
+  }
+
+  .panel {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .history-head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .filter {
+    width: 100%;
+  }
+
+  .filter input {
+    flex: 1;
+  }
+
+  th, td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  
+  .action-group {
+    gap: 2px;
+  }
+}
